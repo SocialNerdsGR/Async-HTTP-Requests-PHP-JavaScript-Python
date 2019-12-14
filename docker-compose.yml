@@ -1,11 +1,5 @@
 version: "3.7"
 
-x-args: &args
-  args:
-    UID: ${UID}
-    GID: ${GID}
-
-
 services:
   server:
     build:
@@ -18,7 +12,6 @@ services:
   python:
     build:
       context: ./python
-      <<: *args
     container_name: app_python
     volumes:
       - ./code/python:/home/serveruser/app:delegated
@@ -27,7 +20,6 @@ services:
   php:
     build:
       context: ./php
-      <<: *args
     container_name: app_php
     volumes:
       - ./code/php:/home/serveruser/app:delegated
@@ -36,7 +28,6 @@ services:
   node:
     build:
       context: ./node
-      <<: *args
     container_name: app_node
     volumes:
       - ./code/node:/home/serveruser/app:delegated

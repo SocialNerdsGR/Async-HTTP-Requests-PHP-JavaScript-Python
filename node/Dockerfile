@@ -1,9 +1,7 @@
 FROM node:12-stretch
 
-ARG UID=1000
-
 # Add user.
-RUN adduser serveruser -u $UID
+RUN adduser serveruser
 
 RUN apt-get update && apt-get install -y --no-install-recommends git
 
