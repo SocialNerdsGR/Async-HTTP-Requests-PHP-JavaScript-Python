@@ -17,8 +17,8 @@ def get_response():
 
 @app.route('/')
 async def test(request):
-    time.sleep(0.2)
+    time.sleep(0.3)
     return json({'message': get_response()})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, workers=10)
+    app.run(host='0.0.0.0', port=8000, workers=20)
